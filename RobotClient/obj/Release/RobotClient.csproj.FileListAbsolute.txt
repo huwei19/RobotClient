@@ -1,0 +1,8 @@
+C:\work\secret\Code\Main\Server\Robot\robotclient\RobotClient.exe.config
+C:\work\secret\Code\Main\Server\Robot\robotclient\RobotClient.exe
+C:\work\secret\Code\Main\Server\Robot\robotclient\RobotClient.pdb
+C:\work\secret\Code\Main\Support\RobotClient\RobotClient\obj\Release\RobotClient.csproj.CoreCompileInputs.cache
+C:\work\secret\Code\Main\Support\RobotClient\RobotClient\obj\Release\RobotClient.csproj.CopyComplete
+C:\work\secret\Code\Main\Support\RobotClient\RobotClient\obj\Release\RobotClient.exe
+C:\work\secret\Code\Main\Support\RobotClient\RobotClient\obj\Release\RobotClient.pdb
+C:\work\secret\Code\Main\Support\RobotClient\RobotClient\obj\Release\RobotClient.csprojAssemblyReference.cache

@@ -1,0 +1,7 @@
+C:\work\secret\Code\Main\Server\Robot\deploymaker\DeployMaker.exe.config
+C:\work\secret\Code\Main\Server\Robot\deploymaker\DeployMaker.exe
+C:\work\secret\Code\Main\Server\Robot\deploymaker\DeployMaker.pdb
+C:\work\secret\Code\Main\Support\RobotClient\DeployMaker\obj\Debug\DeployMaker.csproj.CoreCompileInputs.cache
+C:\work\secret\Code\Main\Support\RobotClient\DeployMaker\obj\Debug\DeployMaker.exe
+C:\work\secret\Code\Main\Support\RobotClient\DeployMaker\obj\Debug\DeployMaker.pdb
+C:\work\secret\Code\Main\Support\RobotClient\DeployMaker\obj\Debug\DeployMaker.csprojAssemblyReference.cache

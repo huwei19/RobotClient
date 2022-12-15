@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <StartArguments>-batch 300 -robotIdx 200 -serverId 30200 -aiType 0 -robotNum 2 -isLog True -initId 1 -ExeCDTime 1 -arg0 5 -arg1 10 -arg2 0</StartArguments>
+    <StartAction>Project</StartAction>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PublishUrlHistory>publish\</PublishUrlHistory>
+    <InstallUrlHistory />
+    <SupportUrlHistory />
+    <UpdateUrlHistory />
+    <BootstrapperUrlHistory />
+    <ErrorReportUrlHistory />
+    <FallbackCulture>zh-CN</FallbackCulture>
+    <VerifyUploadedFiles>false</VerifyUploadedFiles>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <StartArguments>-batch 3 -robotIdx 200 -serverId 30200 -aiType 1 -robotNum 1 -isLog True -initId 1 -ExeCDTime 1 -arg0 15000 -arg1 10 -arg2 0</StartArguments>
+  </PropertyGroup>
+</Project>

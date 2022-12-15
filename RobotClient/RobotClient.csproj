@@ -1,0 +1,651 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{53D35B69-259E-402E-97BA-4D88F976277F}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>RobotClient</RootNamespace>
+    <AssemblyName>RobotClient</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\Server\Robot\robotclient\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <LangVersion>7.1</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\Server\Robot\robotclient\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BytesHelper, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\BytesHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\UnityEngine.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scripts\Common\CharacterDefine.cs" />
+    <Compile Include="Scripts\Common\FSM\FSMMachine.cs" />
+    <Compile Include="Scripts\Common\FSM\FSMState.cs" />
+    <Compile Include="Scripts\Common\GameLog.cs" />
+    <Compile Include="Scripts\Common\HttpClientHelp.cs" />
+    <Compile Include="Scripts\Common\IniFile.cs" />
+    <Compile Include="Scripts\Common\LogModule.cs" />
+    <Compile Include="Scripts\Common\ProtocolParser.cs" />
+    <Compile Include="Scripts\Common\ServerTime.cs" />
+    <Compile Include="Scripts\Common\StrDictionary.cs" />
+    <Compile Include="Scripts\Common\Utils.cs" />
+    <Compile Include="Scripts\Common\Version.cs" />
+    <Compile Include="Scripts\GameDefine\GameDefines.cs" />
+    <Compile Include="Scripts\GameDefine\GameDefine_Constant.cs" />
+    <Compile Include="Scripts\GameDefine\GameDefine_Drop.cs" />
+    <Compile Include="Scripts\GameDefine\GameDefine_Friend.cs" />
+    <Compile Include="Scripts\GameDefine\GameDefine_Global.cs" />
+    <Compile Include="Scripts\GameDefine\GameDefine_Login.cs" />
+    <Compile Include="Scripts\GameDefine\GameStruct_AutoActivityConfig.cs" />
+    <Compile Include="Scripts\GameDefine\GameStruct_AutoClientConfig.cs" />
+    <Compile Include="Scripts\GameDefine\GameStruct_AutoGameConfig.cs" />
+    <Compile Include="Scripts\GameDefine\GlobeDefine.cs" />
+    <Compile Include="Scripts\GameDefine\GlobeVar.cs" />
+    <Compile Include="Scripts\GameLogic\Node\NodeActionCode.cs" />
+    <Compile Include="Scripts\GameLogic\StoryLogic.cs" />
+    <Compile Include="Scripts\GameTables\TableException.cs" />
+    <Compile Include="Scripts\GameTables\TableManager.cs" />
+    <Compile Include="Scripts\GameTables\TableManagerEx.cs" />
+    <Compile Include="Scripts\GameTables\Table_AbilityClue.cs" />
+    <Compile Include="Scripts\GameTables\Table_AbilityData.cs" />
+    <Compile Include="Scripts\GameTables\Table_AbilityDataEx.cs" />
+    <Compile Include="Scripts\GameTables\Table_AccountAuthority.cs" />
+    <Compile Include="Scripts\GameTables\Table_Action.cs" />
+    <Compile Include="Scripts\GameTables\Table_ActionAvatarEvent.cs" />
+    <Compile Include="Scripts\GameTables\Table_ActionReview.cs" />
+    <Compile Include="Scripts\GameTables\Table_ActionSkip.cs" />
+    <Compile Include="Scripts\GameTables\Table_Activity.cs" />
+    <Compile Include="Scripts\GameTables\Table_AddSign.cs" />
+    <Compile Include="Scripts\GameTables\Table_AddSignAward.cs" />
+    <Compile Include="Scripts\GameTables\Table_AlbumCard.cs" />
+    <Compile Include="Scripts\GameTables\Table_AlbumLevel.cs" />
+    <Compile Include="Scripts\GameTables\Table_AlbumStory.cs" />
+    <Compile Include="Scripts\GameTables\Table_AlbumStorySub.cs" />
+    <Compile Include="Scripts\GameTables\Table_ALevelTest.cs" />
+    <Compile Include="Scripts\GameTables\Table_AntiIndulgenceAccountList.cs" />
+    <Compile Include="Scripts\GameTables\Table_AntiIndulgenceResource.cs" />
+    <Compile Include="Scripts\GameTables\Table_Appointment.cs" />
+    <Compile Include="Scripts\GameTables\Table_Article.cs" />
+    <Compile Include="Scripts\GameTables\Table_ArticleDetail.cs" />
+    <Compile Include="Scripts\GameTables\Table_ArticleOfficialAccount.cs" />
+    <Compile Include="Scripts\GameTables\Table_ArticleReply.cs" />
+    <Compile Include="Scripts\GameTables\Table_AssetGroup.cs" />
+    <Compile Include="Scripts\GameTables\Table_AssetList.cs" />
+    <Compile Include="Scripts\GameTables\Table_AttrData.cs" />
+    <Compile Include="Scripts\GameTables\Table_Audio.cs" />
+    <Compile Include="Scripts\GameTables\Table_AudioAcb.cs" />
+    <Compile Include="Scripts\GameTables\Table_AudioCri.cs" />
+    <Compile Include="Scripts\GameTables\Table_AutoSystemMail.cs" />
+    <Compile Include="Scripts\GameTables\Table_Avatar.cs" />
+    <Compile Include="Scripts\GameTables\Table_BattlePass.cs" />
+    <Compile Include="Scripts\GameTables\Table_BattlePassTask.cs" />
+    <Compile Include="Scripts\GameTables\Table_BattleScript.cs" />
+    <Compile Include="Scripts\GameTables\Table_BehaviorCalcNum.cs" />
+    <Compile Include="Scripts\GameTables\Table_BundleBuild.cs" />
+    <Compile Include="Scripts\GameTables\Table_BundleConfig.cs" />
+    <Compile Include="Scripts\GameTables\Table_BuyGold.cs" />
+    <Compile Include="Scripts\GameTables\Table_BuyStamina.cs" />
+    <Compile Include="Scripts\GameTables\Table_Camera.cs" />
+    <Compile Include="Scripts\GameTables\Table_CameraShake.cs" />
+    <Compile Include="Scripts\GameTables\Table_Card.cs" />
+    <Compile Include="Scripts\GameTables\Table_CardAsset.cs" />
+    <Compile Include="Scripts\GameTables\Table_CardAttrGrow.cs" />
+    <Compile Include="Scripts\GameTables\Table_CardAudio.cs" />
+    <Compile Include="Scripts\GameTables\Table_CardEnhanceLevel.cs" />
+    <Compile Include="Scripts\GameTables\Table_CardEx.cs" />
+    <Compile Include="Scripts\GameTables\Table_CardExpItem.cs" />
+    <Compile Include="Scripts\GameTables\Table_CardFile.cs" />
+    <Compile Include="Scripts\GameTables\Table_CardFileLevel.cs" />
+    <Compile Include="Scripts\GameTables\Table_CardFrame.cs" />
+    <Compile Include="Scripts\GameTables\Table_CardLevel.cs" />
+    <Compile Include="Scripts\GameTables\Table_CardPiece.cs" />
+    <Compile Include="Scripts\GameTables\Table_CardPoolType.cs" />
+    <Compile Include="Scripts\GameTables\Table_CardResolve.cs" />
+    <Compile Include="Scripts\GameTables\Table_CardStar.cs" />
+    <Compile Include="Scripts\GameTables\Table_CardStarItem.cs" />
+    <Compile Include="Scripts\GameTables\Table_CardTrain.cs" />
+    <Compile Include="Scripts\GameTables\Table_Channel.cs" />
+    <Compile Include="Scripts\GameTables\Table_Character.cs" />
+    <Compile Include="Scripts\GameTables\Table_CharacterAsset.cs" />
+    <Compile Include="Scripts\GameTables\Table_CharacterContacts.cs" />
+    <Compile Include="Scripts\GameTables\Table_CharacterIntimacyDialog.cs" />
+    <Compile Include="Scripts\GameTables\Table_Circle.cs" />
+    <Compile Include="Scripts\GameTables\Table_CircleReply.cs" />
+    <Compile Include="Scripts\GameTables\Table_CityCopy.cs" />
+    <Compile Include="Scripts\GameTables\Table_CityCopyFloor.cs" />
+    <Compile Include="Scripts\GameTables\Table_CityCopyFloorDesc.cs" />
+    <Compile Include="Scripts\GameTables\Table_CityWork.cs" />
+    <Compile Include="Scripts\GameTables\Table_CityWorkTask.cs" />
+    <Compile Include="Scripts\GameTables\Table_CityWorkTaskDrop.cs" />
+    <Compile Include="Scripts\GameTables\Table_CommonAward.cs" />
+    <Compile Include="Scripts\GameTables\Table_Condition.cs" />
+    <Compile Include="Scripts\GameTables\Table_ContainerManager.cs" />
+    <Compile Include="Scripts\GameTables\Table_CoolDown.cs" />
+    <Compile Include="Scripts\GameTables\Table_CoolDownTimeInfo.cs" />
+    <Compile Include="Scripts\GameTables\Table_CV.cs" />
+    <Compile Include="Scripts\GameTables\Table_DailyStamina.cs" />
+    <Compile Include="Scripts\GameTables\Table_DailyStaminaDialog.cs" />
+    <Compile Include="Scripts\GameTables\Table_Device.cs" />
+    <Compile Include="Scripts\GameTables\Table_DeviceAdapter.cs" />
+    <Compile Include="Scripts\GameTables\Table_Dialog.cs" />
+    <Compile Include="Scripts\GameTables\Table_DialogAvatar.cs" />
+    <Compile Include="Scripts\GameTables\Table_Divination.cs" />
+    <Compile Include="Scripts\GameTables\Table_DivinationProgress.cs" />
+    <Compile Include="Scripts\GameTables\Table_DivinationReward.cs" />
+    <Compile Include="Scripts\GameTables\Table_DrawCardActivity.cs" />
+    <Compile Include="Scripts\GameTables\Table_DrawCardAdvance.cs" />
+    <Compile Include="Scripts\GameTables\Table_DrawCardAdvanceCard.cs" />
+    <Compile Include="Scripts\GameTables\Table_DrawCardAdvanceCardWeight.cs" />
+    <Compile Include="Scripts\GameTables\Table_DrawCardAdvanceNew.cs" />
+    <Compile Include="Scripts\GameTables\Table_DrawCardNormal.cs" />
+    <Compile Include="Scripts\GameTables\Table_DrawCardNormalCard.cs" />
+    <Compile Include="Scripts\GameTables\Table_DrawCardNormalCardWeight.cs" />
+    <Compile Include="Scripts\GameTables\Table_DrawCardPreview.cs" />
+    <Compile Include="Scripts\GameTables\Table_Dressup.cs" />
+    <Compile Include="Scripts\GameTables\Table_Drop.cs" />
+    <Compile Include="Scripts\GameTables\Table_DropItem.cs" />
+    <Compile Include="Scripts\GameTables\Table_DropNotify.cs" />
+    <Compile Include="Scripts\GameTables\Table_DropPreview.cs" />
+    <Compile Include="Scripts\GameTables\Table_EffectAsset.cs" />
+    <Compile Include="Scripts\GameTables\Table_Emoji.cs" />
+    <Compile Include="Scripts\GameTables\Table_Enviroment.cs" />
+    <Compile Include="Scripts\GameTables\Table_EverydaySign.cs" />
+    <Compile Include="Scripts\GameTables\Table_Example.cs" />
+    <Compile Include="Scripts\GameTables\Table_ExtraConfig.cs" />
+    <Compile Include="Scripts\GameTables\Table_FateDialog.cs" />
+    <Compile Include="Scripts\GameTables\Table_FateLine.cs" />
+    <Compile Include="Scripts\GameTables\Table_FateLineAvatar.cs" />
+    <Compile Include="Scripts\GameTables\Table_FateLineLevel.cs" />
+    <Compile Include="Scripts\GameTables\Table_FirstGift.cs" />
+    <Compile Include="Scripts\GameTables\Table_Fuli.cs" />
+    <Compile Include="Scripts\GameTables\Table_FuliAddSign.cs" />
+    <Compile Include="Scripts\GameTables\Table_FuliAddSignAward.cs" />
+    <Compile Include="Scripts\GameTables\Table_FuliDailyStamina.cs" />
+    <Compile Include="Scripts\GameTables\Table_FuliDailyStaminaDialog.cs" />
+    <Compile Include="Scripts\GameTables\Table_FuliFund.cs" />
+    <Compile Include="Scripts\GameTables\Table_FuliLottery.cs" />
+    <Compile Include="Scripts\GameTables\Table_FuliNormal.cs" />
+    <Compile Include="Scripts\GameTables\Table_FuliRecharge.cs" />
+    <Compile Include="Scripts\GameTables\Table_FuliRiddleCage.cs" />
+    <Compile Include="Scripts\GameTables\Table_FullWordFilter.cs" />
+    <Compile Include="Scripts\GameTables\Table_FunctionUnlock.cs" />
+    <Compile Include="Scripts\GameTables\Table_Gift.cs" />
+    <Compile Include="Scripts\GameTables\Table_GMList.cs" />
+    <Compile Include="Scripts\GameTables\Table_GMServerWarningIgnore.cs" />
+    <Compile Include="Scripts\GameTables\Table_Goto.cs" />
+    <Compile Include="Scripts\GameTables\Table_Guide.cs" />
+    <Compile Include="Scripts\GameTables\Table_GuideEx.cs" />
+    <Compile Include="Scripts\GameTables\Table_Hardware.cs" />
+    <Compile Include="Scripts\GameTables\Table_HeartBeat.cs" />
+    <Compile Include="Scripts\GameTables\Table_HeartBeatAction.cs" />
+    <Compile Include="Scripts\GameTables\Table_HeartBeatDialog.cs" />
+    <Compile Include="Scripts\GameTables\Table_HeartBeatQuestion.cs" />
+    <Compile Include="Scripts\GameTables\Table_HelpTips.cs" />
+    <Compile Include="Scripts\GameTables\Table_Hexagram.cs" />
+    <Compile Include="Scripts\GameTables\Table_Holiday.cs" />
+    <Compile Include="Scripts\GameTables\Table_InteractGamePlay.cs" />
+    <Compile Include="Scripts\GameTables\Table_InteractSpecialSound.cs" />
+    <Compile Include="Scripts\GameTables\Table_Interflow.cs" />
+    <Compile Include="Scripts\GameTables\Table_IntimacyLevel.cs" />
+    <Compile Include="Scripts\GameTables\Table_IPWhiteListLimit.cs" />
+    <Compile Include="Scripts\GameTables\Table_Item.cs" />
+    <Compile Include="Scripts\GameTables\Table_ItemPageType.cs" />
+    <Compile Include="Scripts\GameTables\Table_LevelPlotDesc.cs" />
+    <Compile Include="Scripts\GameTables\Table_Loading.cs" />
+    <Compile Include="Scripts\GameTables\Table_LoadingScene.cs" />
+    <Compile Include="Scripts\GameTables\Table_LoadingText.cs" />
+    <Compile Include="Scripts\GameTables\Table_LoadingTexture.cs" />
+    <Compile Include="Scripts\GameTables\Table_LocalizationData.cs" />
+    <Compile Include="Scripts\GameTables\Table_MainSceneCarouselMap.cs" />
+    <Compile Include="Scripts\GameTables\Table_MainSceneTimeSceneEnv.cs" />
+    <Compile Include="Scripts\GameTables\Table_MisReputationLevel.cs" />
+    <Compile Include="Scripts\GameTables\Table_Mission.cs" />
+    <Compile Include="Scripts\GameTables\Table_MissionItem.cs" />
+    <Compile Include="Scripts\GameTables\Table_MissionMail.cs" />
+    <Compile Include="Scripts\GameTables\Table_MissionRate.cs" />
+    <Compile Include="Scripts\GameTables\Table_MonthCard.cs" />
+    <Compile Include="Scripts\GameTables\Table_NewRoleLimit.cs" />
+    <Compile Include="Scripts\GameTables\Table_Node.cs" />
+    <Compile Include="Scripts\GameTables\Table_Notice.cs" />
+    <Compile Include="Scripts\GameTables\Table_NoticeType.cs" />
+    <Compile Include="Scripts\GameTables\Table_NoviceGuide.cs" />
+    <Compile Include="Scripts\GameTables\Table_Npc.cs" />
+    <Compile Include="Scripts\GameTables\Table_NpcLevel.cs" />
+    <Compile Include="Scripts\GameTables\Table_Npclike.cs" />
+    <Compile Include="Scripts\GameTables\Table_NpcQuestion.cs" />
+    <Compile Include="Scripts\GameTables\Table_NpcState.cs" />
+    <Compile Include="Scripts\GameTables\Table_NpcTask.cs" />
+    <Compile Include="Scripts\GameTables\Table_OptItem.cs" />
+    <Compile Include="Scripts\GameTables\Table_PersonalChapterAward.cs" />
+    <Compile Include="Scripts\GameTables\Table_Personality.cs" />
+    <Compile Include="Scripts\GameTables\Table_PersonalityData.cs" />
+    <Compile Include="Scripts\GameTables\Table_PersonalityLevel.cs" />
+    <Compile Include="Scripts\GameTables\Table_PersonalityMonologue.cs" />
+    <Compile Include="Scripts\GameTables\Table_PersonalityProcess.cs" />
+    <Compile Include="Scripts\GameTables\Table_PersonalityQuestion.cs" />
+    <Compile Include="Scripts\GameTables\Table_PersonalStory.cs" />
+    <Compile Include="Scripts\GameTables\Table_PlayerLevel.cs" />
+    <Compile Include="Scripts\GameTables\Table_Plot.cs" />
+    <Compile Include="Scripts\GameTables\Table_PlotInteraction.cs" />
+    <Compile Include="Scripts\GameTables\Table_Preloader.cs" />
+    <Compile Include="Scripts\GameTables\Table_ProductIDMap.cs" />
+    <Compile Include="Scripts\GameTables\Table_PushContent.cs" />
+    <Compile Include="Scripts\GameTables\Table_PushNotification.cs" />
+    <Compile Include="Scripts\GameTables\Table_PuzzleLevelData.cs" />
+    <Compile Include="Scripts\GameTables\Table_PuzzleThought.cs" />
+    <Compile Include="Scripts\GameTables\Table_PuzzleThoughtSet.cs" />
+    <Compile Include="Scripts\GameTables\Table_Question.cs" />
+    <Compile Include="Scripts\GameTables\Table_RechargeGift.cs" />
+    <Compile Include="Scripts\GameTables\Table_RechargeRule.cs" />
+    <Compile Include="Scripts\GameTables\Table_RechargeShop.cs" />
+    <Compile Include="Scripts\GameTables\Table_RegionList.cs" />
+    <Compile Include="Scripts\GameTables\Table_ReloadList.cs" />
+    <Compile Include="Scripts\GameTables\Table_Retrieval.cs" />
+    <Compile Include="Scripts\GameTables\Table_RewardPreview.cs" />
+    <Compile Include="Scripts\GameTables\Table_Role.cs" />
+    <Compile Include="Scripts\GameTables\Table_Rumor.cs" />
+    <Compile Include="Scripts\GameTables\Table_RumorRewardRule.cs" />
+    <Compile Include="Scripts\GameTables\Table_RumorSub.cs" />
+    <Compile Include="Scripts\GameTables\Table_RumorSubSet.cs" />
+    <Compile Include="Scripts\GameTables\Table_SavePoint.cs" />
+    <Compile Include="Scripts\GameTables\Table_SceneClass.cs" />
+    <Compile Include="Scripts\GameTables\Table_SceneClassRandomEntry.cs" />
+    <Compile Include="Scripts\GameTables\Table_SceneEventCategory.cs" />
+    <Compile Include="Scripts\GameTables\Table_SceneEventDesc.cs" />
+    <Compile Include="Scripts\GameTables\Table_SceneNode.cs" />
+    <Compile Include="Scripts\GameTables\Table_SceneNpc.cs" />
+    <Compile Include="Scripts\GameTables\Table_SceneNpcCreateRule.cs" />
+    <Compile Include="Scripts\GameTables\Table_SceneNpcReplace.cs" />
+    <Compile Include="Scripts\GameTables\Table_SceneObject.cs" />
+    <Compile Include="Scripts\GameTables\Table_SceneTimeChange.cs" />
+    <Compile Include="Scripts\GameTables\Table_ScreenFade.cs" />
+    <Compile Include="Scripts\GameTables\Table_ScriptData.cs" />
+    <Compile Include="Scripts\GameTables\Table_Secret.cs" />
+    <Compile Include="Scripts\GameTables\Table_SecretDesc.cs" />
+    <Compile Include="Scripts\GameTables\Table_SecretKeyword.cs" />
+    <Compile Include="Scripts\GameTables\Table_Selection.cs" />
+    <Compile Include="Scripts\GameTables\Table_ServerConfigList.cs" />
+    <Compile Include="Scripts\GameTables\Table_ServerList.cs" />
+    <Compile Include="Scripts\GameTables\Table_ShopCommon.cs" />
+    <Compile Include="Scripts\GameTables\Table_ShopDiamond.cs" />
+    <Compile Include="Scripts\GameTables\Table_ShopGiftItem.cs" />
+    <Compile Include="Scripts\GameTables\Table_ShopType.cs" />
+    <Compile Include="Scripts\GameTables\Table_ShopTypeDialog.cs" />
+    <Compile Include="Scripts\GameTables\Table_Signboard.cs" />
+    <Compile Include="Scripts\GameTables\Table_SignboardDecals.cs" />
+    <Compile Include="Scripts\GameTables\Table_SignboardTheme.cs" />
+    <Compile Include="Scripts\GameTables\Table_Skill.cs" />
+    <Compile Include="Scripts\GameTables\Table_SkillEx.cs" />
+    <Compile Include="Scripts\GameTables\Table_SkinData.cs" />
+    <Compile Include="Scripts\GameTables\Table_SpecialClue.cs" />
+    <Compile Include="Scripts\GameTables\Table_SpecialLevelGamePlay.cs" />
+    <Compile Include="Scripts\GameTables\Table_StoryChapter.cs" />
+    <Compile Include="Scripts\GameTables\Table_StoryChapterCheckpoint.cs" />
+    <Compile Include="Scripts\GameTables\Table_StoryChapterEnding.cs" />
+    <Compile Include="Scripts\GameTables\Table_StoryChapterEndingDesc.cs" />
+    <Compile Include="Scripts\GameTables\Table_StoryChapterEndingRule.cs" />
+    <Compile Include="Scripts\GameTables\Table_StoryChapterLevel.cs" />
+    <Compile Include="Scripts\GameTables\Table_StoryChapterLevelReq.cs" />
+    <Compile Include="Scripts\GameTables\Table_StoryChapterLevelReward.cs" />
+    <Compile Include="Scripts\GameTables\Table_StoryChapterLevelRule.cs" />
+    <Compile Include="Scripts\GameTables\Table_StoryChapterLevelSceneEvent.cs" />
+    <Compile Include="Scripts\GameTables\Table_StoryChapterRule.cs" />
+    <Compile Include="Scripts\GameTables\Table_StoryLine.cs" />
+    <Compile Include="Scripts\GameTables\Table_StrDictionary.cs" />
+    <Compile Include="Scripts\GameTables\Table_StrFilter.cs" />
+    <Compile Include="Scripts\GameTables\Table_Survery.cs" />
+    <Compile Include="Scripts\GameTables\Table_SvrDictionary.cs" />
+    <Compile Include="Scripts\GameTables\Table_SystemMail.cs" />
+    <Compile Include="Scripts\GameTables\Table_TagData.cs" />
+    <Compile Include="Scripts\GameTables\Table_Task.cs" />
+    <Compile Include="Scripts\GameTables\Table_TaskAward.cs" />
+    <Compile Include="Scripts\GameTables\Table_TaskGroup.cs" />
+    <Compile Include="Scripts\GameTables\Table_TaskTab.cs" />
+    <Compile Include="Scripts\GameTables\Table_TeleportPoint.cs" />
+    <Compile Include="Scripts\GameTables\Table_Title.cs" />
+    <Compile Include="Scripts\GameTables\Table_TranlateDictionary.cs" />
+    <Compile Include="Scripts\GameTables\Table_TranlateDictionaryEn.cs" />
+    <Compile Include="Scripts\GameTables\Table_UIDictionary.cs" />
+    <Compile Include="Scripts\GameTables\Table_UIItemExtension.cs" />
+    <Compile Include="Scripts\GameTables\Table_UIPackage.cs" />
+    <Compile Include="Scripts\GameTables\Table_UIPanel.cs" />
+    <Compile Include="Scripts\GameTables\Table_UIRedDot.cs" />
+    <Compile Include="Scripts\GameTables\Table_UsableItem.cs" />
+    <Compile Include="Scripts\GameTables\Table_VChat.cs" />
+    <Compile Include="Scripts\GameTables\Table_VChatEmoji.cs" />
+    <Compile Include="Scripts\GameTables\Table_VChatGroup.cs" />
+    <Compile Include="Scripts\GameTables\Table_VChatMsg.cs" />
+    <Compile Include="Scripts\GameTables\Table_VChatOption.cs" />
+    <Compile Include="Scripts\GameTables\Table_VoiceData.cs" />
+    <Compile Include="Scripts\GameTables\Table_VoiceExtraConfig.cs" />
+    <Compile Include="Scripts\GameTables\Table_WordFilter.cs" />
+    <Compile Include="Scripts\GameTables\TabReader.cs" />
+    <Compile Include="Scripts\Localization\LocalizationManager.cs" />
+    <Compile Include="Scripts\Network\LiteNet\ByteHelper.cs" />
+    <Compile Include="Scripts\Network\LiteNet\ChannelBufferLite.cs" />
+    <Compile Include="Scripts\Network\LiteNet\Codec.cs" />
+    <Compile Include="Scripts\Network\LiteNet\Connection.cs" />
+    <Compile Include="Scripts\Network\LiteNet\Exceptions.cs" />
+    <Compile Include="Scripts\Network\LiteNet\Generated\MessageCodecCollection.cs" />
+    <Compile Include="Scripts\Network\LiteNet\Generated\MessageID.cs" />
+    <Compile Include="Scripts\Network\LiteNet\Generated\Messages.cs" />
+    <Compile Include="Scripts\Network\LiteNet\Generated\Messages.Serializer.cs" />
+    <Compile Include="Scripts\Network\LiteNet\Header.cs" />
+    <Compile Include="Scripts\Network\LiteNet\Messages\MessageCodec.cs" />
+    <Compile Include="Scripts\Network\LiteNet\Messages\MessageCodecCollection.cs" />
+    <Compile Include="Scripts\Network\LiteNet\Messages\MessageExtension.cs" />
+    <Compile Include="Scripts\Network\LiteNet\Messages\MessageHandler.cs" />
+    <Compile Include="Scripts\Network\LiteNet\Messages\MessageHandlerCollection.cs" />
+    <Compile Include="Scripts\Network\LiteNet\Messages\MessageInterface.cs" />
+    <Compile Include="Scripts\Network\LiteNet\Messages\MessageMapping.cs" />
+    <Compile Include="Scripts\Network\LiteNet\Network.cs" />
+    <Compile Include="Scripts\Network\LiteNet\XorCrypto.cs" />
+    <Compile Include="Scripts\Network\NetWorkLogic.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_ACTIVITY_CHANGESTATE_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_ACTIVITY_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_ACTIVITY_RECHARGE_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_ACTIVITY_RECHARGE_RECEIVEREWARD_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_ADD_CHARACTER_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_ADD_SIGN_GET_AWARD_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_ADD_SIGN_LIST_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_ALBUM_ACTIVE_CARD_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_ALBUM_ACTIVE_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_ALBUM_AWARD_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_ALBUM_LEVELUP_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_APPLY_FRIEND_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_APPOINTMENT_FINISH_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_APPOINTMENT_OPEN_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_APPOINTMENT_PANEL_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_APPOINTMENT_START_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_ARTICLE_FORWARD_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_ARTICLE_READ_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_AUTO_SYNC_GAMECONFIG_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_CARD_ABILITYUP_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_CARD_CHANGE_FACE_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_CARD_FILE_AWARD_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_CARD_LEVELUP_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_CARD_MAKE_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_CARD_RESOLVE_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_CARD_STAR_LEVELUP_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_CARD_TRAINLEVEL_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_CDKEY_AWARD_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_CHENGHAO_LIST_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_CHENGHAO_NEW_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_CIRCLE_CREATE_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_CIRCLE_REPLY_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_CITYWORK_BUBBLE_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_CITYWORK_GET_TASK_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_CITYWORK_RECEIVE_TASK_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_CITY_COPY_AWARD_PANEL_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_CITY_COPY_GET_COMMON_AWARD_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_CITY_COPY_GET_FAST_AWARD_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_CONTACTS_REMARK_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_CREATE_USER_RET_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_DAILY_STAMINA_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_DEL_FRIEND_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_DIVINATION_GET_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_DRAW_CARD_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_DRAW_CARD_SWITCH_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_DRESSUP_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_DRESS_UNLOCK_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_DROP_LIST_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_ENTER_CONTAINER_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_ERR_TIPS_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_FATELINE_ACTIVE_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_FATELINE_AWARD_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_FATELINE_SELECT_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_FIRSTPAY_AWARD_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_FLOOR_CLICK_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_FRISTGIFT_RECEIVEREWARD_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_FUND_RECEIVELEVELREWARD_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_FUN_OPEN_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_GET_ALBUM_SHAREREWARD_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_GET_CARD_SHAREREWARD_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_GET_EVERY_TASK_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_GET_TASK_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_GIVE_FRIEND_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_GUIDE_SAVE_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_GUIDE_STEP_ID_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_HEART_BEAT_FNISH_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_HEART_BEAT_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_HEART_BEAT_START_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_HEART_BEAT_USE_COUNT_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_INTERFLOW_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_INTERFLOW_SELECT_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_ITEM_UPDATE_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_ITEM_USE_END_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_KICK_REASON_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_LOCK_PERSONAL_STORY_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_LOGIN_QUEUE_STATUS_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_LOGIN_RET_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_MAIL_GET_ITEM_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_MAIL_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_MAIL_OPERATION_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_MAINCITY_INTERACTIVE_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_MISSION_ACCEPT_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_MISSION_COMMIT_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_MISSION_DO_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_MONOLOGUE_UNLOCK_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_MONTHCARD_RECEIVEREWARD_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_NOTICE_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_OPENGIFT_START_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_PARTICULARS_FRIEND_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_PERSONALITY_ADD_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_PERSONALITY_LEVELUP_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_PERSONAL_STORY_GET_AWARD_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_PERSONAL_STORY_UNLOCK_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_PHONE_BINDING_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_PUSH_STATE_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_QUESTION_ANSWER_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_RECHARGE_DIAMOND_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_RECMMEND_FRIEND_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_REQUEST_PURCHASE_INFO_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_RET_CHANGENAME_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_ROLLING_NOTICE_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_RUMOR_MULTI_STOP_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_RUMOR_REDUCE_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_RUMOR_RESET_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_RUMOR_SUB_TIME_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_SAVEPOINT_GET_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_SAVEPOINT_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_SEARCH_FRIEND_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_SECRET_GET_AWARD_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_SECRET_LINK_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_SEE_CHAPTER_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_SELECT_CHENGHAO_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_SESSION_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_SHOP_BUY_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_SIGNATURE_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_SIGN_INFO_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_SKIN_UNLOCK_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_STORY_CHAPTER_RESOLVE_ENDING_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_STORY_CHAPTER_REWIND_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_STORY_CHAPTER_SELECT_ENDING_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_STORY_CHAPTER_UNLOCK_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_STORY_LEVEL_FINISH_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_STORY_LEVEL_START_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_STORY_QUICK_START_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_SURVERY_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_SURVERY_LIST_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_SYNC_AIBUMLOCK_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_SYNC_ALBUM_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_SYNC_ARTICLES_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_SYNC_CARDFRAME_LIST_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_SYNC_CARD_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_SYNC_CHARACTER_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_SYNC_CHARGE_AMT_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_SYNC_CIRCLE_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_SYNC_CITYWORK_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_SYNC_DEBTPUNISHSTATE_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_SYNC_DIVINATION_GET_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_SYNC_DRAW_CARD_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_SYNC_DROPAUTOGIFT_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_SYNC_FATELINE_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_SYNC_FATE_AUTOACTIVE_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_SYNC_FRIEND_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_SYNC_FRISTGIFT_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_SYNC_GAMECONFIG_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_SYNC_GIFTRECHARGE_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_SYNC_MISSION_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_SYNC_NPC_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_SYNC_QUESTION_ANSWER_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_SYNC_RECHARGEBUYNUM_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_SYNC_ROLLING_NOTICE_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_SYNC_RUMOR_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_SYNC_SHOPLIST_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_SYNC_SHOP_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_SYNC_STORY_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_SYNC_TASK_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_SYNC_VCHAT_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_SYN_ATTR_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_UPDATE_CHARACTER_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_UPDATE_CIRCLE_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_UPDATE_VCHAT_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_USER_DATA_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_VCHAT_UNLOCK_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\GC_VISUAL_CARD_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\MC_PACKET_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\OC_TRANSPORT_PACK_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\OC_TRANSPORT_TO_CROSS_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\OC_VALIDATE_RET_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\XX_REQUEST_HEARTBEAT_Handler.cs" />
+    <Compile Include="Scripts\Network\PacketHandler\XX_RESPONSE_HEARTBEAT_Handler.cs" />
+    <Compile Include="Scripts\Robot\Robot.cs" />
+    <Compile Include="Scripts\Robot\RobotAI\RobotAIBase.cs" />
+    <Compile Include="Scripts\Robot\RobotAI\RobotAI_AddItem.cs" />
+    <Compile Include="Scripts\Robot\RobotAI\RobotAI_ChangeScene.cs" />
+    <Compile Include="Scripts\Robot\RobotAI\RobotAI_RandomCG.cs" />
+    <Compile Include="Scripts\Robot\RobotAI\RobotAI_SceneClass.cs" />
+    <Compile Include="Scripts\Robot\RobotBehavior.cs" />
+    <Compile Include="Scripts\Robot\RobotBehavior_AutoCG.cs" />
+    <Compile Include="Scripts\Robot\RobotData.cs" />
+    <Compile Include="Scripts\Robot\RobotState\LogicStates\investigation.cs" />
+    <Compile Include="Scripts\Robot\RobotState\LogicStates\StateCard.cs" />
+    <Compile Include="Scripts\Robot\RobotState\LogicStates\StateChapter.cs" />
+    <Compile Include="Scripts\Robot\RobotState\LogicStates\StateCity.cs" />
+    <Compile Include="Scripts\Robot\RobotState\LogicStates\StateDrawCard.cs" />
+    <Compile Include="Scripts\Robot\RobotState\LogicStates\StateDressup.cs" />
+    <Compile Include="Scripts\Robot\RobotState\LogicStates\StateFriend.cs" />
+    <Compile Include="Scripts\Robot\RobotState\LogicStates\StateFriendGive.cs" />
+    <Compile Include="Scripts\Robot\RobotState\LogicStates\StateItem.cs" />
+    <Compile Include="Scripts\Robot\RobotState\LogicStates\StateMail.cs" />
+    <Compile Include="Scripts\Robot\RobotState\LogicStates\StateRewind.cs" />
+    <Compile Include="Scripts\Robot\RobotState\LogicStates\StateRumor.cs" />
+    <Compile Include="Scripts\Robot\RobotState\LogicStates\StateShop.cs" />
+    <Compile Include="Scripts\Robot\RobotState\LogicStates\StateStory.cs" />
+    <Compile Include="Scripts\Robot\RobotState\LogicStates\StateStoryEx.cs" />
+    <Compile Include="Scripts\Robot\RobotState\LogicStates\StateTask.cs" />
+    <Compile Include="Scripts\Robot\RobotState\LoginState\StateConnectLoginServer.cs" />
+    <Compile Include="Scripts\Robot\RobotState\LoginState\StateConnectServer.cs" />
+    <Compile Include="Scripts\Robot\RobotState\LoginState\StateCreateUser.cs" />
+    <Compile Include="Scripts\Robot\RobotState\LoginState\StateEnterGame.cs" />
+    <Compile Include="Scripts\Robot\RobotState\LoginState\StateExit.cs" />
+    <Compile Include="Scripts\Robot\RobotState\LoginState\StateHalt.cs" />
+    <Compile Include="Scripts\Robot\RobotState\LoginState\StateLogin.cs" />
+    <Compile Include="Scripts\Robot\RobotState\LoginState\StateReconnectServer.cs" />
+    <Compile Include="Scripts\Robot\RobotState\LoginState\StateSceneMain.cs" />
+    <Compile Include="Scripts\Robot\RobotState\RandomState\StateRandomByte.cs" />
+    <Compile Include="Scripts\Robot\RobotState\RandomState\StateRandomCG.cs" />
+    <Compile Include="Scripts\Robot\RobotState\RandomState\StateRandomMsg.cs" />
+    <Compile Include="Scripts\Robot\RobotStatistics.cs" />
+    <Compile Include="Scripts\Robot\UserData\Friend.cs" />
+    <Compile Include="Scripts\Robot\UserData\FriendManagerComponent.cs" />
+    <Compile Include="Scripts\Robot\UserData\GameItemData.cs" />
+    <Compile Include="Scripts\Robot\UserData\GlobalData.cs" />
+    <Compile Include="Scripts\Robot\UserData\LoginData.cs" />
+    <Compile Include="Scripts\Robot\UserData\NpcData.cs" />
+    <Compile Include="Scripts\Robot\UserData\PlayerData.cs" />
+    <Compile Include="Scripts\Robot\UserData\SceneData.cs" />
+    <Compile Include="Scripts\Robot\UserData\StatisticsData.cs" />
+    <Compile Include="Scripts\Robot\UserData\StoryData.cs" />
+    <Compile Include="Scripts\ThirdParty\Coroutine\Coroutine.cs" />
+    <Compile Include="Scripts\ThirdParty\Coroutine\CoroutineManager.cs" />
+    <Compile Include="Scripts\ThirdParty\LitJson\IJsonWrapper.cs" />
+    <Compile Include="Scripts\ThirdParty\LitJson\JsonData.cs" />
+    <Compile Include="Scripts\ThirdParty\LitJson\JsonException.cs" />
+    <Compile Include="Scripts\ThirdParty\LitJson\JsonMapper.cs" />
+    <Compile Include="Scripts\ThirdParty\LitJson\JsonMockWrapper.cs" />
+    <Compile Include="Scripts\ThirdParty\LitJson\JsonReader.cs" />
+    <Compile Include="Scripts\ThirdParty\LitJson\JsonWriter.cs" />
+    <Compile Include="Scripts\ThirdParty\LitJson\Lexer.cs" />
+    <Compile Include="Scripts\ThirdParty\LitJson\ParserToken.cs" />
+    <Compile Include="Scripts\ThirdParty\Slua\Source\Slua_Managed\LuaDLL.cs" />
+    <Compile Include="Scripts\ThirdParty\Slua\Source\Slua_Managed\LuaObject.cs" />
+    <Compile Include="Scripts\MainUILogic.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Scripts\Network\LiteNet\README.md" />
+    <None Include="Scripts\Network\LiteNet\TODO.md" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.1 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
